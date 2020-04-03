@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Graphs</title>
+    </head>
+    <body bgcolor="blueviolet" style="text-align: center;">
+
+        <h1 style="font-size: 72px;color:crimson;text-align: center;">Predicted Graphs</h1>
+        {% for z in range(6) %}
+        <div id="img"><img src= "{{ url }}{{ z }}.png" alt="Graphs"></div>
+        {% endfor %}
+
+    <style>
+    #img
+    {
+        display:inline-block;
+        position: relative;
+        border:2px solid black;
+        margin:50px
+    }
+    </style>
+    </body>
+</html>

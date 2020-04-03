@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <title>
+            LCP 04
+        </title>
+    </head>
+
+    <body style="text-align: center;">
+    <span style="font-size: 72px;font-weight: bolder;color:cyan;background-color: rgba(0,128,128,.3);animation:disp .5s ease-in-out">LCP 04</span>
+    <div class="mframe" style="overflow: hidden;animation: disp 1s ease-in-out;">
+     <div id="box" style="overflow: hidden;">
+        <h1 style="font-size:40px;color:rgb(219, 29, 92)">Water Demand Prediction</h1>
+        <div style="background-color:skyblue;position:absolute;width:99%;top:80px;left:-25px;">
+        <h2><span style="color:green"><abbr title="Low Water Demand">Low Water Demand</abbr></span><span style="color:rgb(255, 145, 0)"><abbr title="Medium Water Demand">Medium Water Demand</abbr></span><br><span style="color:rgb(225, 51, 31)"><abbr title="High Water Demand">High Water Demand</abbr></span><span style="color:red"><abbr title="Very High Water Demand">Very High Water Demand</abbr></span></h2>
+        </div>
+        <form style="position:absolute;top:200px;left:20px" method="POST" action="/final">
+            <br>
+            <span id="txt">Month :</span><select name="monthid">
+                    <option value="jan">January</option>
+                    <option value="feb">February</option>
+                    <option value="mar">March</option>
+                    <option value="apr">April</option>
+                    <option value="may">May</option>
+                    <option value="jun">June</option>
+                    <option value="jul">July</option>
+                    <option value="aug">August</option>
+                    <option value="sep">September</option>
+                    <option value="oct">October</option>
+                    <option value="nov">November</option>
+                    <option value="dec">December</option>
+                    </select>
+            
+            <span id="txt">Year :</span><select name="yearid">
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    </select><br><br>
+            <input type='submit' value='Predict' id="btn"></input>
+        </form>
+    </div>
+    </div>
+    </body>
+
+    <style>
+    *
+    {
+        font-size: 24px;
+        margin:10px;
+        font-weight: 600;
+        margin:10px;
+    }
+    #txt
+    {
+        margin:0px 5px 0px 60px;
+        color:darkslateblue;
+        font-size: 25px;
+    }
+    span
+    {
+        padding:10px 10px;
+    }
+    body
+    {
+        background-color: navy;
+    }
+    .mframe
+    {
+        border:black 3px solid;
+        height:500px;
+        width:800px;
+        background-color: palegoldenrod;
+        position: absolute;
+        transform:translate(-50%,-50%);
+        top:50%;
+        left:50%;
+        border-radius: 30px;
+        box-shadow: brown 2px 2px 9px 3px;
+    }
+    #box
+    {   
+        height:400px;
+        width:800px;
+        position: absolute;
+        transform:translate(-50%,-50%);
+        top:50%;
+        left:50%;
+        animation: pop 1s ease;
+    }
+    #btn
+    {
+        font-weight: bolder;
+        background-color: blueviolet;
+        border:black 2px solid;
+        border-radius: 15px;
+        outline:none;
+        transition:.1s linear;
+        height:40px;
+        width:120px;
+        position: relative;
+        left:60px;
+    }
+    @keyframes pop {
+        0%
+        {
+            opacity:0;
+            height:0;
+            width:0px;
+            transform: rotate(0deg);
+            top:-50%;
+            left:-50%;
+        }
+        100%
+        {
+            opacity: 1;
+            height:100%;
+            width:100%;
+            transform: rotate(1440deg);
+            top:10%;
+            left:0%;
+        }
+        
+    }
+    @keyframes disp{
+        0%
+        {
+            opacity:0;
+        }
+        100%{
+            opacity:1;
+        }
+    }
+    #btn:hover,#btn:focus
+    {
+        background-color:green;
+        color:white;
+        height:50px;
+        width:200px;
+    }
+    #btn:focus,select:focus
+    {
+        outline: red 3px dotted;
+    }
+
+    #btn:active
+    {
+        height:50px;
+        width:200px;
+        color:lawngreen;
+        background-color: lightcyan;
+    }
+    select
+    {
+        background-color: cornflowerblue;
+        border:darkblue 2px solid;
+        border-radius:15px;
+        color:white;
+        outline:none;
+        transition:.1s ease-in
+    }
+    
+    select:hover
+    {
+        transform: scale(1.1);
+    }
+    option
+    {
+        color:red
+    }
+    </style>
+</html>

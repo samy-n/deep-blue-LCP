@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <title>
+            Prediction
+        </title>
+    </head>
+
+    <body style="text-align: center;">
+        <div id="mframe">
+            <span id="prediction">PREDICTION</span>
+            <div id="inbox">
+                <span id="txt">Month : {{ fmonth }}</span></br>
+                <span id="txt">Year : {{ fyear }}</span>
+                <ul type=none>
+                    {% for result in fpredict %}
+                        <li>{{ result }}</li>
+                    {% endfor %}
+                </ul>
+                <span id="unit">MLD=Millions Of Litre Per Day</span>
+            </div>
+        </div>
+        <style>
+         *
+        {
+            font-size: 32px;
+        }
+
+        body
+        {
+            background-color: lightcyan;
+        }
+
+        #mframe
+        {
+           position: absolute;
+           height:600px;
+           width:800px;
+           border:2px black solid;
+           overflow: hidden;
+           border-radius: 25px;
+           background-color: mintcream;
+           transform: translate(-50%,-50%);
+           top:50%;
+           left:50%;
+        }
+
+        #mframe::before
+        {
+            position: absolute;
+            font-family:cursive;
+            content:"WATER DEMAND PREDICTION";
+            color:rgb(255, 255, 255);
+            text-shadow: 2px 2px 5px  black,1px 1px 15px maroon,1px 1px 8px green;
+            border-bottom:1px black solid;
+            background-color: rgb(2, 2, 173);
+            font-size:48px;
+            height:16%;
+            width:100%;
+            left:0
+        }
+
+        #inbox
+        {
+            position: absolute;
+            width:100%;
+            transform: translate(-50%,-50%);
+            top:65%;
+            left:50%;
+            font-family: monospace;
+        }
+
+        #prediction
+        {
+            top:130px;
+            left:0%;
+            position: relative;
+            font-family: Times, 'Times New Roman', serif;
+            font-weight: 900;
+            color:navy;
+            font-size:62px;
+            padding:5px;
+            text-shadow:1px 1px 5px cadetblue,1px 1px 8px teal;
+        }
+
+        #txt
+        {
+            font-family:   sans-serif;
+            font-weight: bolder;
+            font-size: 40px;
+            text-shadow: 0px 0px 5px pink;
+        }
+
+        li
+        {
+            font-size:48px;
+            text-shadow:0 0 5px lightseagreen;
+            font-weight: bolder;
+            margin:5px auto;
+        }
+        
+        #unit
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 22px;
+            color:chartreuse;
+            text-shadow: 0px 0px 1px black,1px 1px 3px black;
+        }
+        </style>
+    </body>
+</html>

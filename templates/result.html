@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>
+            Result
+        </title>
+    </head>
+
+    <body style="text-align: center;">
+        <form action="/graph" method="POST">
+        <h1 style="font-size:72px; color:brown">Prediction</h1>
+        <br>
+        <span id="res" style="color: {{ rcolor }}">RESULT : {{ finaleresult }}</span><br><br><br>
+        <span id="info">Month : {{ months }}</span><br><br>
+        <span id="info">Year : {{ years }}<br></span>
+        <ul type=none id="feat">
+            {% for feature in jjfeature %}
+                <li>{{ feature }}</li>
+            {% endfor %}
+            </ul>
+            <!--{% for z in range(6) %}
+            <div id="img"><img src= "{{ url }}{{ z }}.png" alt="Graphs"></div>
+            {% endfor %}-->
+        <input type="submit" value="Predicted Graphs" id="btn"></input>
+        </form>
+
+       <style>
+        #btn
+        {   
+            font-size:1.5em;
+            font-weight: bolder;
+            background-color: cyan;
+            border:black 2px solid;
+            border-radius: 15px;
+            outline:none;
+            transition:.1s linear;
+            height:40px;
+            width:250px;
+        }
+        #btn:hover,#btn:focus
+        {
+            background-color:green;
+            color:white;
+            height:50px;
+            width:300px;
+        }
+        #btn:focus,select:focus
+        {
+            outline: red 3px dotted;
+        }
+
+        #btn:active
+        {
+            height:50px;
+            width:300px;
+            color:lawngreen;
+            background-color: lightcyan;
+        }
+        body
+        {
+            background-color: rgb(49, 170, 211);
+        }
+        li
+        {
+            font-weight:bolder;
+            background-color: rgba(138,42,255,.2);
+            color:yellow;
+            font-size: 40px;
+            border-radius: 10px;
+            margin: 10px 0px;
+        }
+        #res
+        {
+            color:crimson;
+            background-color: skyblue;
+            font-size:50px;
+            font-weight:900;
+            padding:10px;
+            border-radius: 20px;
+        }
+        #info
+        {
+            font-size:30px;
+            color:rgb(255, 238, 100);
+            background-color: rgba(138,42,255,.1);
+            font-weight:bolder;
+            padding:10px;
+            border-radius: 30px;
+        }
+        </style>
+    </body>
+</html>
